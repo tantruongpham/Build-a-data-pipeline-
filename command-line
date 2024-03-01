@@ -1,0 +1,4 @@
+docker-compose up -d --build 
+docker exec -it mongo admin 
+airflow tasks test [pipeline] [task]
+spark-submit --packages [] [path]

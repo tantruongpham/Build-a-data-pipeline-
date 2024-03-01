@@ -1,0 +1,17 @@
+[2023-09-15T12:27:28.686+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=***_pipeline/run_id=scheduled__2023-09-14T00:00:00+00:00/task_id=download_questions_file_task permission to 509
+[2023-09-15T12:27:28.749+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=***_pipeline/run_id=scheduled__2023-09-14T00:00:00+00:00/task_id=download_questions_file_task permission to 509
+[2023-09-15T12:27:28.815+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: airflow_pipeline.download_questions_file_task scheduled__2023-09-14T00:00:00+00:00 [queued]>
+[2023-09-15T12:27:28.836+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: airflow_pipeline.download_questions_file_task scheduled__2023-09-14T00:00:00+00:00 [queued]>
+[2023-09-15T12:27:28.838+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2023-09-15T12:27:28.867+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): download_questions_file_task> on 2023-09-14 00:00:00+00:00
+[2023-09-15T12:27:28.879+0000] {standard_task_runner.py:57} INFO - Started process 3626 to run task
+[2023-09-15T12:27:28.886+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', '***_pipeline', 'download_questions_file_task', 'scheduled__2023-09-14T00:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/***_pipeline.py', '--cfg-path', '/tmp/tmp84m6bvyg']
+[2023-09-15T12:27:28.895+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask download_questions_file_task
+[2023-09-15T12:27:28.988+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=***_pipeline/run_id=scheduled__2023-09-14T00:00:00+00:00/task_id=download_questions_file_task permission to 509
+[2023-09-15T12:27:29.018+0000] {task_command.py:415} INFO - Running <TaskInstance: airflow_pipeline.download_questions_file_task scheduled__2023-09-14T00:00:00+00:00 [running]> on host 2d5ab14694ee
+[2023-09-15T12:27:29.161+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='tantruong.ph@gmail.com' AIRFLOW_CTX_DAG_OWNER='Airflow' AIRFLOW_CTX_DAG_ID='***_pipeline' AIRFLOW_CTX_TASK_ID='download_questions_file_task' AIRFLOW_CTX_EXECUTION_DATE='2023-09-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-09-14T00:00:00+00:00'
+[2023-09-15T12:31:02.284+0000] {logging_mixin.py:151} INFO - Downloading 1FGpHXtZ_b1wOL2kfBTWfRnUHLtwCAFYI into /usr/local/share/data/Questions.csv... Done.
+[2023-09-15T12:31:02.290+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-09-15T12:31:02.307+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=***_pipeline, task_id=download_questions_file_task, execution_date=20230914T000000, start_date=20230915T122728, end_date=20230915T123102
+[2023-09-15T12:31:02.365+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-15T12:31:02.415+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

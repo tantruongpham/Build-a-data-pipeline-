@@ -1,0 +1,27 @@
+[2023-09-15T12:36:05.677+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=***_pipeline/run_id=scheduled__2023-09-14T00:00:00+00:00/task_id=import_questions_mongo permission to 509
+[2023-09-15T12:36:05.714+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=***_pipeline/run_id=scheduled__2023-09-14T00:00:00+00:00/task_id=import_questions_mongo permission to 509
+[2023-09-15T12:36:05.757+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: airflow_pipeline.import_questions_mongo scheduled__2023-09-14T00:00:00+00:00 [queued]>
+[2023-09-15T12:36:05.770+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: airflow_pipeline.import_questions_mongo scheduled__2023-09-14T00:00:00+00:00 [queued]>
+[2023-09-15T12:36:05.771+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2023-09-15T12:36:05.793+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): import_questions_mongo> on 2023-09-14 00:00:00+00:00
+[2023-09-15T12:36:05.805+0000] {standard_task_runner.py:57} INFO - Started process 3929 to run task
+[2023-09-15T12:36:05.813+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', '***_pipeline', 'import_questions_mongo', 'scheduled__2023-09-14T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/***_pipeline.py', '--cfg-path', '/tmp/tmp8nay2y6t']
+[2023-09-15T12:36:05.818+0000] {standard_task_runner.py:85} INFO - Job 33: Subtask import_questions_mongo
+[2023-09-15T12:36:05.895+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=***_pipeline/run_id=scheduled__2023-09-14T00:00:00+00:00/task_id=import_questions_mongo permission to 509
+[2023-09-15T12:36:05.913+0000] {task_command.py:415} INFO - Running <TaskInstance: airflow_pipeline.import_questions_mongo scheduled__2023-09-14T00:00:00+00:00 [running]> on host 2d5ab14694ee
+[2023-09-15T12:36:05.985+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='tantruong.ph@gmail.com' AIRFLOW_CTX_DAG_OWNER='Airflow' AIRFLOW_CTX_DAG_ID='***_pipeline' AIRFLOW_CTX_TASK_ID='import_questions_mongo' AIRFLOW_CTX_EXECUTION_DATE='2023-09-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-09-14T00:00:00+00:00'
+[2023-09-15T12:36:05.988+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-09-15T12:36:05.990+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'mongoimport "mongodb://admin:password@mongo:27017/stackoverflow?authSource=admin" -u admin -p password --type csv -d stackoverflow -c questions --headerline --drop /usr/local/share/data/Questions.csv']
+[2023-09-15T12:36:06.007+0000] {subprocess.py:86} INFO - Output:
+[2023-09-15T12:36:06.032+0000] {subprocess.py:93} INFO - 2023-09-15T12:36:06.032+0000	Failed: open /usr/local/share/data/Questions.csv: no such file or directory
+[2023-09-15T12:36:06.033+0000] {subprocess.py:93} INFO - 2023-09-15T12:36:06.032+0000	0 document(s) imported successfully. 0 document(s) failed to import.
+[2023-09-15T12:36:06.034+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-09-15T12:36:06.046+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-09-15T12:36:06.051+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=***_pipeline, task_id=import_questions_mongo, execution_date=20230914T000000, start_date=20230915T123605, end_date=20230915T123606
+[2023-09-15T12:36:06.065+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 33 for task import_questions_mongo (Bash command failed. The command returned a non-zero exit code 1.; 3929)
+[2023-09-15T12:36:06.104+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-15T12:36:06.127+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
